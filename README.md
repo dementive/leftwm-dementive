@@ -12,13 +12,13 @@ Simple leftwm theme with just enough to have a functional system.
 
 # Non-Features
 
-1. Bar - All bars are just eyecandy, why would use a bar when you can just use the terminal?
+1. Bar - All bars are just eyecandy, why use a bar when you can just use the terminal?
 
 2. Compositor - More eyecandy that isn't needed.
 
 # Dependencies
 
-1. lxsession - This does some stuff im not exactly sure what but I need it to actually use my computer. Once I figure out an alternative i'll probably remove this.
+1. lxsession - This is the session manager im currently using, will replace with something else in the future probably. If you don't want it, just remove it from the up and down scripts.
 
 2. feh - Set the desktop background
 
