@@ -2,6 +2,8 @@
 
 Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have a functional system.
 
+The css customizations I use for firefox and a rofi theme are also included.
+
 # Features
 
 1. Small red borders only on focused window.
@@ -12,14 +14,13 @@ Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have
 
 # Non-Features
 
-1. Bar - All bars are just eyecandy, why use a bar when you can just use the terminal?
+1. Bar - I don't really need a bar.
 
-2. Compositor - More eyecandy that isn't needed.
+2. Compositor - I don't really need a compositor.
 
-# Dependencies
+# Optional Dependencies
 
-There are no dependencies.
-I currently use these 2 but they are optional and the theme will still work without them.
+There are no dependencies. I currently use these 2 but they are optional and the theme will still work without them.
 
 1. lxsession - This is the session manager im currently using, will replace with something else in the future probably. If you don't want it, just remove it from the up and down scripts.
 
