@@ -1,6 +1,6 @@
 # Dementive leftwm theme
 
-Simple leftwm theme with just enough to have a functional system.
+Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have a functional system.
 
 # Features
 
