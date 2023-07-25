@@ -29,5 +29,5 @@ There are no dependencies. I currently use these 2 but they are optional and the
 # Screenshots
 
 ![Space Background](background.png)
-![Example Layout](/assets/image.png)
 ![Example Desktop](/assets/image2.png)
+![Example Layout](/assets/image.png)
