@@ -25,3 +25,4 @@ Simple leftwm theme with just enough to have a functional system.
 # Screenshots
 
 ![Space Background](background.png)
+![Example Layout](/assets/image.png)
