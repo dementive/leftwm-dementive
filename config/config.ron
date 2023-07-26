@@ -15,7 +15,6 @@
     max_window_width: None,
     layouts: [
         MainAndVertStack,
-        MainAndHorizontalStack,
         Monocle,
     ],
     layout_mode: Tag,
