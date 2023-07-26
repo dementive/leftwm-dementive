@@ -1,0 +1,101 @@
+// For info about configuration please visit https://github.com/leftwm/leftwm/wiki
+
+#![enable(implicit_some)]
+(
+    modkey: "Mod4",
+    mousekey: "Mod4",
+    workspaces: [],
+    tags: [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+    ],
+    max_window_width: None,
+    layouts: [
+        MainAndVertStack,
+        MainAndHorizontalStack,
+        Monocle,
+    ],
+    layout_mode: Tag,
+    insert_behavior: Bottom,
+    scratchpad: [
+        (name: "Alacritty", value: "alacritty", x: 550, y: 340, height: 450, width: 780),
+    ],
+    window_rules: [],
+    disable_current_tag_swap: true,
+    disable_tile_drag: false,
+    disable_window_snap: true,
+    focus_behaviour: Sloppy,
+    focus_new_windows: true,
+    single_window_border: false,
+    sloppy_mouse_follows_focus: true,
+    auto_derive_workspaces: true,
+    keybind: [
+        // Program starting commands
+        (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "space"),
+        (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
+        // Window commands
+        (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
+        (command: ToggleFullScreen, modifier: ["modkey"], key: "f"),
+        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
+        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "p"),
+        // Window movement
+        (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
+        (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
+        (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "j"),
+        (command: MoveWindowTop, value: "", modifier: ["modkey", "Shift"], key: "i"),
+        (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "Up"),
+        (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "Down"),
+        // Window focus
+        (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "Up"),
+        (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "Down"),
+        (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
+        (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
+        // Change layout
+        (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "Up"),
+        (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "Down"),
+        (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "k"),
+        (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "j"),
+        // Cycle workspaces
+        (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "Right"),
+        (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "Left"),
+        (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "l"),
+        (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "h"),
+        // Go to workspace
+        (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
+        (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
+        (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),
+        (command: GotoTag, value: "4", modifier: ["modkey"], key: "4"),
+        (command: GotoTag, value: "5", modifier: ["modkey"], key: "5"),
+        // Move window to new workspace
+        (command: MoveToTag, value: "1", modifier: ["modkey", "Shift"], key: "1"),
+        (command: MoveToTag, value: "2", modifier: ["modkey", "Shift"], key: "2"),
+        (command: MoveToTag, value: "3", modifier: ["modkey", "Shift"], key: "3"),
+        (command: MoveToTag, value: "4", modifier: ["modkey", "Shift"], key: "4"),
+        (command: MoveToTag, value: "5", modifier: ["modkey", "Shift"], key: "5"),
+        // Adjust window width
+        (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Left"),
+        (command: DecreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Right"),
+        // Brightness
+        (command: Execute, value: "brightnessctl s +5%", modifier: [], key: "XF86XK_MonBrightnessUp"),
+        (command: Execute, value: "brightnessctl s 5%- ", modifier: [], key: "XF86XK_MonBrightnessDown"),
+        // Volume
+        (command: Execute, value: "amixer -q set Master toggle", modifier: [], key: "XF86XK_AudioMute"),
+        (command: Execute, value: "amixer -q set Master 5%-", modifier: [], key: "XF86XK_AudioLowerVolume"),
+        (command: Execute, value: "amixer -q set Master 5%+", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+        (command: Execute, value: "playerctl play-pause", modifier: [], key: "XF86XK_AudioPlay"),
+        (command: Execute, value: "playerctl next", modifier: [], key: "XF86XK_AudioNext"),
+        (command: Execute, value: "playerctl previous", modifier: [], key: "XF86XK_AudioPrev"),
+        (command: Execute, value: "playerctl stop", modifier: [], key: "XF86XK_AudioStop"),
+        // Screenshots
+        (command: Execute, value: "scrot -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'", modifier: ["modkey"], key: "s"),
+        (command: Execute, value: "scrot --select -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'", modifier: ["modkey", "Shift"], key: "s"),
+        // Floating window commands
+        (command: FloatingToTile, modifier: ["modkey", "Shift"], key: "t"),
+        (command: TileToFloating, modifier: ["modkey", "Shift"], key: "f"),
+        (command: ToggleFloating, modifier: ["modkey", "Control"], key: "f"),
+    ],
+    state_path: None,
+)
