@@ -33,7 +33,7 @@
     auto_derive_workspaces: true,
     keybind: [
         // Program starting commands
-        (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "space"),
+        (command: Execute, value: "rofi -show drun -icon-theme 'Papirus' -show-icons", modifier: ["modkey"], key: "space"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
         // Window commands
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
@@ -52,6 +52,10 @@
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "Down"),
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
+        // Floating window commands
+        (command: FloatingToTile, modifier: ["modkey", "Shift"], key: "t"),
+        (command: TileToFloating, modifier: ["modkey", "Shift"], key: "f"),
+        (command: ToggleFloating, modifier: ["modkey", "Control"], key: "f"),
         // Change layout
         (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "Up"),
         (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "Down"),
@@ -91,10 +95,6 @@
         // Screenshots
         (command: Execute, value: "scrot -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'", modifier: ["modkey"], key: "s"),
         (command: Execute, value: "scrot --select -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'", modifier: ["modkey", "Shift"], key: "s"),
-        // Floating window commands
-        (command: FloatingToTile, modifier: ["modkey", "Shift"], key: "t"),
-        (command: TileToFloating, modifier: ["modkey", "Shift"], key: "f"),
-        (command: ToggleFloating, modifier: ["modkey", "Control"], key: "f"),
     ],
     state_path: None,
 )

@@ -1,9 +1,3 @@
-/*******************************************************************************
- * ROFI Color theme
- * User: Rasi
- * Copyright: Rasmus Steinke
- *******************************************************************************/
-
 * {
     selected-normal-foreground:  rgba ( 255, 255, 255, 100 % );
     foreground:                  rgba ( 193, 193, 193, 100 % );
@@ -19,12 +13,12 @@
     selected-active-foreground:  rgba ( 128, 203, 196, 40 % );
     alternate-active-background: rgba ( 22, 22, 22, 100 % );
     background:                  rgba ( 22, 22, 22, 100 % );
-    bordercolor:                 rgba ( 22, 22, 22, 100 % );
+    bordercolor:                 rgba ( 135, 135, 135, 100 % );
     alternate-normal-foreground: @foreground;
     normal-background:           rgba ( 22, 22, 22, 100 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  rgba ( 57, 66, 73, 100 % );
-    border-color:                @foreground;
+    border-color:                @bordercolor;
     spacing:                     2;
     separatorcolor:              rgba ( 30, 37, 41, 100 % );
     urgent-background:           rgba ( 22, 22, 22, 100 % );
@@ -45,7 +39,7 @@ mainbox {
     padding: 0;
 }
 message {
-    border:       1px dash 0px 0px ;
+    border:       1px solid 0px 0px ;
     border-color: @separatorcolor;
     padding:      1px ;
 }
@@ -54,7 +48,7 @@ textbox {
 }
 listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
     border-color: @separatorcolor;
     spacing:      2px ;
     scrollbar:    true;
@@ -62,7 +56,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 1.5px ;
 }
 element-text {
     background-color: inherit;
@@ -111,7 +105,7 @@ scrollbar {
     padding:      0;
 }
 mode-switcher {
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
     border-color: @separatorcolor;
 }
 button.selected {
