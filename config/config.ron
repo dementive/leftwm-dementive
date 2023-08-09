@@ -81,6 +81,8 @@
         // Adjust window width
         (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Left"),
         (command: DecreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Right"),
+        (command: IncreaseMainWidth, value: "5", modifier: ["modkey"], key: "equal"),
+        (command: DecreaseMainWidth, value: "5", modifier: ["modkey"], key: "minus"),
         // Brightness
         (command: Execute, value: "brightnessctl s +5%", modifier: [], key: "XF86XK_MonBrightnessUp"),
         (command: Execute, value: "brightnessctl s 5%- ", modifier: [], key: "XF86XK_MonBrightnessDown"),
