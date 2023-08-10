@@ -9,4 +9,5 @@ fi
 
 leftwm-command "UnloadTheme"
 
+kill picom
 kill lxsession

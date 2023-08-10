@@ -21,3 +21,8 @@ fi
 if [ -x "$(command -h lxsession)" ]; then
   lxsession
 fi
+
+# Run picom
+if [ -x "$(command -v picom)" ]; then
+  picom --config "${SCRIPTPATH}/picom/picom-dementive.conf"
+fi

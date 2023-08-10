@@ -10,11 +10,11 @@ Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have
 
 3. Cool space background.
 
+4. Simple picom config with shadows and windows that fade when changing workspaces
+
 # Non-Features
 
 1. Bar - I don't really need a bar.
-
-2. Compositor - I don't really need a compositor.
 
 # Optional Dependencies
 
@@ -23,6 +23,8 @@ There are no dependencies. I currently use these 2 but they are optional and the
 1. lxsession - This is the session manager im currently using, will replace with something else in the future probably. If you don't want it, just remove it from the up and down scripts.
 
 2. feh - Set the desktop background
+
+2. picom - Compositor
 
 # Other themes and configs included
 
