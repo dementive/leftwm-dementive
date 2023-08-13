@@ -4,7 +4,7 @@ Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have
 
 # Features
 
-1. Small red borders only on focused window.
+1. Small steel blue borders only on focused window.
 
 2. No margins. I don't like wasted space.
 
@@ -38,7 +38,9 @@ There are no dependencies. I currently use these 2 but they are optional and the
 
 5. gtk - The gtk 3/4 theme that I use.
 
-6. rofi - Minimal dark rofi theme
+6. kvantum - The kvantum theme that I use, matches the gtk theme well.
+
+7. rofi - Minimal dark rofi theme
 
 # Screenshots
 
