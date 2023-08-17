@@ -11,3 +11,4 @@ leftwm-command "UnloadTheme"
 
 kill picom
 kill lxsession
+kill dunst

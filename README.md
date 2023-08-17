@@ -24,7 +24,9 @@ There are no dependencies. I currently use these 2 but they are optional and the
 
 2. feh - Set the desktop background
 
-2. picom - Compositor
+3. picom - Compositor
+
+4. dunst - Notifications
 
 # Other themes and configs included
 
@@ -44,6 +46,6 @@ There are no dependencies. I currently use these 2 but they are optional and the
 
 # Screenshots
 
-![Space Background](background.png)
-![Example Desktop](/assets/image2.png)
-![Example Layout](/assets/image.png)
+![Space Background](./background.png)
+![Example Desktop](./assets/image2.png)
+![Example Layout](./assets/image.png)

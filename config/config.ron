@@ -32,23 +32,6 @@
     ],
     window_rules: [
         // Use xprop to get the WM_CLASS of a opened window
-        // Development on tag 1
-        ( window_class: "subl", spawn_on_tag: 1),
-        ( window_class: "sublime_merge", spawn_on_tag: 1),
-        // Browser on tag 2
-        ( window_class: "firedragon", spawn_on_tag: 2),
-        ( window_class: "firefox", spawn_on_tag: 2),
-        // File manager on tag 3
-        ( window_class: "pcmanfm", spawn_on_tag: 3),
-        // Steam and games on workspace 4
-        ( window_class: "steam", spawn_on_tag: 4),
-        ( window_class: "steamwebhelper", spawn_on_tag: 4),
-        // Art on workspace 5
-        ( window_class: "Gimp-2.10", spawn_on_tag: 5),
-        // Discord on workspace 6
-        ( window_class: "webcord", spawn_on_tag: 6),
-        ( window_class: "discord", spawn_on_tag: 6),
-        // Other window rules
         ( window_class: "paradox launcher", spawn_floating: true),
         ( window_class: "lxappearance", spawn_floating: true),
         ( window_class: "pavucontrol", spawn_floating: true),
@@ -56,6 +39,9 @@
         ( window_class: "kvantummanager", spawn_floating: true),
         ( window_class: "nvidia-settings", spawn_floating: true),
         ( window_class: "garuda-assistant", spawn_floating: true),
+        // Popup windows in steam
+        ( window_title: "Properties - .*", spawn_floating: true),
+        ( window_title: "Special Offers", spawn_floating: true),
     ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
@@ -122,8 +108,8 @@
         (command: MoveToTag, value: "8", modifier: ["modkey", "Shift"], key: "8"),
         (command: MoveToTag, value: "9", modifier: ["modkey", "Shift"], key: "9"),
         // Adjust window width
-        (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Left"),
-        (command: DecreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Right"),
+        (command: IncreaseMainWidth, value: "20", modifier: ["modkey", "Shift"], key: "equal"),
+        (command: DecreaseMainWidth, value: "20", modifier: ["modkey", "Shift"], key: "minus"),
         (command: IncreaseMainWidth, value: "5", modifier: ["modkey"], key: "equal"),
         (command: DecreaseMainWidth, value: "5", modifier: ["modkey"], key: "minus"),
         // Program starting commands
