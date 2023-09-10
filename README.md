@@ -18,9 +18,9 @@ Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have
 
 # Optional Dependencies
 
-There are no dependencies. I currently use these 2 but they are optional and the theme will still work without them.
+There are no dependencies. I currently use these but they are optional and the theme will still work without them.
 
-1. lxsession - This is the session manager im currently using, will replace with something else in the future probably. If you don't want it, just remove it from the up and down scripts.
+1. lxsession - Session manager
 
 2. feh - Set the desktop background
 
@@ -43,6 +43,8 @@ There are no dependencies. I currently use these 2 but they are optional and the
 6. kvantum - The kvantum theme that I use, matches the gtk theme well.
 
 7. rofi - Minimal dark rofi theme
+
+8. dunst - Dunst config that matches the theme, has several optional scripts to use
 
 # Screenshots
 

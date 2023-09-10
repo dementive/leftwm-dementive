@@ -28,7 +28,7 @@
     insert_behavior: Bottom,
     scratchpad: [
         (name: "Alacritty", value: "alacritty"),
-        (name: "Nvim", value: "alacritty -e nvim"),
+        (name: "Micro", value: "alacritty -e micro"),
     ],
     window_rules: [
         // Use xprop to get the WM_CLASS of a opened window
@@ -39,6 +39,7 @@
         ( window_class: "kvantummanager", spawn_floating: true),
         ( window_class: "nvidia-settings", spawn_floating: true),
         ( window_class: "garuda-assistant", spawn_floating: true),
+        ( window_class: "btrfs-assistant-bin", spawn_floating: true),
         // Popup windows in steam
         ( window_title: "Properties - .*", spawn_floating: true),
         ( window_title: "Special Offers", spawn_floating: true),
@@ -50,14 +51,14 @@
     focus_new_windows: true,
     single_window_border: false,
     sloppy_mouse_follows_focus: true,
-    auto_derive_workspaces: true,
+    auto_derive_workspaces: false,
     keybind: [
         // Window commands
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: ToggleFullScreen, modifier: ["modkey"], key: "f"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
         (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "p"),
-        (command: ToggleScratchPad, value: "Nvim", modifier: ["modkey", "Shift"], key: "p"),
+        (command: ToggleScratchPad, value: "Micro", modifier: ["modkey", "Shift"], key: "p"),
         // Window movement
         (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
@@ -115,18 +116,12 @@
         // Program starting commands
         (command: Execute, value: "rofi -show drun -icon-theme 'Papirus' -show-icons", modifier: ["modkey"], key: "space"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
-        // Brightness
-        (command: Execute, value: "brightnessctl s +5%", modifier: [], key: "XF86XK_MonBrightnessUp"),
-        (command: Execute, value: "brightnessctl s 5%- ", modifier: [], key: "XF86XK_MonBrightnessDown"),
         // Laptop keyboard backlight
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 0", modifier: ["modkey"], key: "F1"),
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 1", modifier: ["modkey"], key: "F2"),
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 2", modifier: ["modkey"], key: "F3"),
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 3", modifier: ["modkey"], key: "F4"),
         // Volume
-        (command: Execute, value: "amixer -q set Master toggle", modifier: [], key: "XF86XK_AudioMute"),
-        (command: Execute, value: "amixer -q set Master 5%-", modifier: [], key: "XF86XK_AudioLowerVolume"),
-        (command: Execute, value: "amixer -q set Master 5%+", modifier: [], key: "XF86XK_AudioRaiseVolume"),
         (command: Execute, value: "playerctl play-pause", modifier: [], key: "XF86XK_AudioPlay"),
         (command: Execute, value: "playerctl next", modifier: [], key: "XF86XK_AudioNext"),
         (command: Execute, value: "playerctl previous", modifier: [], key: "XF86XK_AudioPrev"),
@@ -142,9 +137,42 @@
         */
         (
             command: Execute,
-            value: "bash -c 'if xrandr | grep \"HDMI-1-0 connected\"; then xrandr --output eDP-1 --auto --output HDMI-1-0 --auto --left-of eDP-1; leftwm-command SoftReload; else xrandr --output HDMI-1-0 --off --output eDP-1 --auto; leftwm-command SoftReload; fi'",
+            value: "bash -c 'if xrandr | grep \"HDMI-1-0 connected\"; then xrandr --output eDP-1 --auto --output HDMI-1-0 --auto --left-of eDP-1; else xrandr --output HDMI-1-0 --off --output eDP-1 --auto; fi'",
+            modifier: ["modkey"],
+            key: "F11"
+        ),
+        /*
+            This uses xrandr to check if there is a monitor named "HDMI-1-0"
+            if there is it sets the HDMI monitor to the main monitor and turns off monitor "eDP-1"
+            if there is not a monitor named "HDMI-1-0" that is connected it will turn off "HDMI-1-0", return to single monitor setup and then reload leftwm
+        */
+        (
+            command: Execute,
+            value: "bash -c 'if xrandr | grep \"HDMI-1-0 connected\"; then xrandr --output eDP-1 --off --output HDMI-1-0 --auto --left-of eDP-1; else xrandr --output HDMI-1-0 --off --output eDP-1 --auto; fi'",
             modifier: ["modkey", "Shift"],
             key: "F11"
+        ),
+        // Dunst Notification Scripts
+        // Volume
+        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/volume.sh mute", modifier: [], key: "XF86XK_AudioMute"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/volume.sh lower", modifier: [], key: "XF86XK_AudioLowerVolume"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/volume.sh raise", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+        // Brightness
+        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/brightness.sh up", modifier: [], key: "XF86XK_MonBrightnessUp"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/brightness.sh down", modifier: [], key: "XF86XK_MonBrightnessDown"),
+        // Wifi menu using rofi and dunst
+        (
+            command: Execute,
+            value: "~/.config/leftwm/themes/current/Dunst/wifimenu.sh",
+            modifier: ["modkey", "Shift"],
+            key: "F9"
+        ),
+        // Logout menu using rofi
+        (
+            command: Execute,
+            value: "~/.config/leftwm/themes/current/Dunst/powermenu.sh",
+            modifier: ["modkey"],
+            key: "F9"
         ),
     ],
     state_path: None,
