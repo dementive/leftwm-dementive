@@ -44,7 +44,15 @@ There are no dependencies. I currently use these but they are optional and the t
 
 7. rofi - Minimal dark rofi theme
 
-8. dunst - Dunst config that matches the theme, has several optional scripts to use
+8. dunst - Dunst config that matches the theme
+
+9. Scripts - These are some scripts I use to help manage my computer. You'll have to set these up to run from your config.ron or some other way, some changes may be needed to make icons show up properly if you do not have Papirus icons installed. The scripts included are:
+	- batterynotify.sh - Will send a dunst notification when your battery is low or full, needs a cron job setup to run it.
+	- brightness.sh - Sends dunst notifications when brightness changes
+	- powermenu.sh - Logout/restart/shutdown menu using rofi
+	- rofi-recorder - Record screen video/audio/video & audio, also screenshot a region or full screen. Uses rofi to show options.
+	- volume.sh - Sends Dunst notifications when volume changes
+	- wifimenu.sh - Connect to wifi, shows all available connections using rofi and dunst.
 
 # Screenshots
 

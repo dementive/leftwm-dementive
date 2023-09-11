@@ -126,9 +126,6 @@
         (command: Execute, value: "playerctl next", modifier: [], key: "XF86XK_AudioNext"),
         (command: Execute, value: "playerctl previous", modifier: [], key: "XF86XK_AudioPrev"),
         (command: Execute, value: "playerctl stop", modifier: [], key: "XF86XK_AudioStop"),
-        // Screenshots
-        (command: Execute, value: "scrot -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'", modifier: ["modkey"], key: "s"),
-        (command: Execute, value: "scrot --select -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'", modifier: ["modkey", "Shift"], key: "s"),
         // Monitor setup toggle
         /*
             This uses xrandr to check if there is a monitor named "HDMI-1-0"
@@ -154,25 +151,32 @@
         ),
         // Dunst Notification Scripts
         // Volume
-        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/volume.sh mute", modifier: [], key: "XF86XK_AudioMute"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/volume.sh lower", modifier: [], key: "XF86XK_AudioLowerVolume"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/volume.sh raise", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Scripts/volume.sh mute", modifier: [], key: "XF86XK_AudioMute"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Scripts/volume.sh lower", modifier: [], key: "XF86XK_AudioLowerVolume"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Scripts/volume.sh raise", modifier: [], key: "XF86XK_AudioRaiseVolume"),
         // Brightness
-        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/brightness.sh up", modifier: [], key: "XF86XK_MonBrightnessUp"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/Dunst/brightness.sh down", modifier: [], key: "XF86XK_MonBrightnessDown"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Scripts/brightness.sh up", modifier: [], key: "XF86XK_MonBrightnessUp"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/Scripts/brightness.sh down", modifier: [], key: "XF86XK_MonBrightnessDown"),
         // Wifi menu using rofi and dunst
         (
             command: Execute,
-            value: "~/.config/leftwm/themes/current/Dunst/wifimenu.sh",
+            value: "~/.config/leftwm/themes/current/Scripts/wifimenu.sh",
             modifier: ["modkey", "Shift"],
             key: "F9"
         ),
         // Logout menu using rofi
         (
             command: Execute,
-            value: "~/.config/leftwm/themes/current/Dunst/powermenu.sh",
+            value: "~/.config/leftwm/themes/current/Scripts/powermenu.sh",
             modifier: ["modkey"],
             key: "F9"
+        ),
+        // Recording menu using rofi
+        (
+            command: Execute,
+            value: "~/.config/leftwm/themes/current/Scripts/rofi-recorder",
+            modifier: ["modkey", "Shift"],
+            key: "s"
         ),
     ],
     state_path: None,
