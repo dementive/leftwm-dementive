@@ -13,8 +13,8 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 # Set background
 if [ -x "$(command -v feh)" ]; then
-  feh --randomize --bg-fill /home/nathan/Pictures/Wallpapers*
-  #feh --bg-scale "${SCRIPTPATH}/background.png"
+  #feh --randomize --bg-fill ~/Pictures/Wallpapers*
+  feh --bg-scale "${SCRIPTPATH}/background.png"
 fi
 
 # Run utility applications
