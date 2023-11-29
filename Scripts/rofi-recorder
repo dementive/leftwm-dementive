@@ -38,6 +38,7 @@ screencast() { \
 	-crf 0 -preset ultrafast -c:a aac \
 	"$DIR/screencast-$(date '+%y%m%d-%H%M-%S').mp4" &
 	echo $! > /tmp/recordingpid
+	echo $! > /tmp/recordingpid
 	updateicon "⏺️🎙️"
 }
 
@@ -69,20 +70,20 @@ rectangle_screenshot() { \
 	scrot --select -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'
 }
 
-option1="󰄘  Screencast"
-option2="  Video"
-option3="  Audio"
-option4="  Stop recording"
-option5="⧠  Screenshot full"
-option6="⧈  Screenshot select"
-option7="󰗼  Exit"
+option1="Screencast"
+option2="Video"
+option3="Audio"
+option4="Stop recording"
+option5="Screenshot full"
+option6="Screenshot select"
+option7="Exit"
 
 if [ ! -f /tmp/recordingpid ] ; then
 	options="$option1\n$option2\n$option3\n$option5\n$option6\n$option7"
-	choice=$(echo -e "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(echo "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 else
 	options="$option4\n$option7"
-	choice=$(echo -e "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(echo "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 fi
 
 
