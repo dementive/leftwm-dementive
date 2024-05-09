@@ -40,11 +40,6 @@ if status --is-interactive
    source ("/usr/bin/starship" init fish --print-full-init | psub)
 end
 
-
-## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
-
-
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
@@ -122,7 +117,6 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='grep -F --color=auto'
 alias egrep='grep -E --color=auto'
-alias hw='hwinfo --short'                          # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"     # Sort installed packages according to size in MB
 
 # Cleanup orphaned packages

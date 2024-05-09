@@ -21,8 +21,8 @@
     ],
     max_window_width: None,
     layouts: [
-        MainAndVertStack,
-        Monocle,
+       "MainAndVertStack",
+        "Monocle",
     ],
     layout_mode: Workspace,
     insert_behavior: Bottom,
@@ -121,6 +121,8 @@
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 1", modifier: ["modkey"], key: "F2"),
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 2", modifier: ["modkey"], key: "F3"),
         (command: Execute, value: "brightnessctl --device='asus::kbd_backlight' set 3", modifier: ["modkey"], key: "F4"),
+        (command: Execute, value: "brightnessctl s +10%-", modifier: ["modkey"], key: "F7"),
+        (command: Execute, value: "brightnessctl s +10%", modifier: ["modkey"], key: "F8"),
         // Volume
         (command: Execute, value: "playerctl play-pause", modifier: [], key: "XF86XK_AudioPlay"),
         (command: Execute, value: "playerctl next", modifier: [], key: "XF86XK_AudioNext"),
