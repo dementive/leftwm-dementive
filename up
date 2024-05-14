@@ -13,21 +13,20 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 # Set background
 if [ -x "$(command -v feh)" ]; then
-  #feh --randomize --bg-fill ~/Pictures/Wallpapers*
+  # feh --randomize --bg-fill ~/Pictures/Wallpapers*
   feh --bg-scale "${SCRIPTPATH}/background.png"
-fi
-
-# Run utility applications
-if [ -x "$(command -h lxsession)" ]; then
-  lxsession
-fi
-
-# Run picom
-if [ -x "$(command -v picom)" ]; then
-  picom --config "${SCRIPTPATH}/picom/picom-dementive.conf"
 fi
 
 # Run dunst
 if [ -x "$(command -v dunst)" ]; then
-  dunst
+  dunst &
+fi
+
+# Start compositor
+if [ -x "$(command -v xcompmgr)" ]; then
+  xcompmgr -f -I 0.03 &
+elif [ -x "$(command -v picom)" ]; then
+  picom &
+elif [ -x "$(command -v compton)" ]; then
+  compton &
 fi

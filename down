@@ -9,6 +9,12 @@ fi
 
 leftwm-command "UnloadTheme"
 
-kill picom
-kill lxsession
+if [ -x "$(command -v xcompmgr)" ]; then
+  kill xcompmgr
+elif [ -x "$(command -v picom)" ]; then
+  kill picom
+elif [ -x "$(command -v compton)" ]; then
+  kill compton
+fi
+
 kill dunst

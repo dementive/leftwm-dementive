@@ -21,7 +21,7 @@
     ],
     max_window_width: None,
     layouts: [
-       "MainAndVertStack",
+        "MainAndVertStack",
         "Monocle",
     ],
     layout_mode: Workspace,
@@ -70,6 +70,7 @@
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "Up"),
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "Down"),
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
+        (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "i"),
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
         // Floating window commands
         (command: FloatingToTile, modifier: ["modkey", "Shift"], key: "t"),

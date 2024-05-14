@@ -1,6 +1,6 @@
 # Dementive leftwm theme
 
-Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have a functional system.
+Minimal [leftwm](https://github.com/leftwm/leftwm) theme.
 
 # Features
 
@@ -10,8 +10,6 @@ Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have
 
 3. Cool space background.
 
-4. Simple picom config with shadows and windows that fade when changing workspaces
-
 # Non-Features
 
 1. Bar - I don't really need a bar.
@@ -20,13 +18,13 @@ Simple [leftwm](https://github.com/leftwm/leftwm) theme with just enough to have
 
 There are no dependencies. I currently use these but they are optional and the theme will still work without them.
 
-1. lxsession - Session manager
+1. feh - Set the desktop background
 
-2. feh - Set the desktop background
+2. xcompmgr - Compositor
 
-3. picom - Compositor
+3. dunst - Notifications
 
-4. dunst - Notifications
+4. batsignal - A simple daemon to send notifications when battery is low. Not part of the repo but you'll probably want to set it up or something similar if you are using a laptop.
 
 # Other themes and configs included
 
@@ -47,12 +45,11 @@ There are no dependencies. I currently use these but they are optional and the t
 8. dunst - Dunst config that matches the theme
 
 9. Scripts - These are some scripts I use to help manage my computer. You'll have to set these up to run from your config.ron or some other way, some changes may be needed to make icons show up properly if you do not have Papirus icons installed. The scripts included are:
-	- batterynotify.sh - Will send a dunst notification when your battery is low or full, needs a cron job setup to run it.
 	- brightness.sh - Sends dunst notifications when brightness changes
 	- powermenu.sh - Logout/restart/shutdown menu using rofi
 	- rofi-recorder - Record screen video/audio/video & audio, also screenshot a region or full screen. Uses rofi to show options.
 	- volume.sh - Sends Dunst notifications when volume changes
-	- wifimenu.sh - Connect to wifi, shows all available connections using rofi and dunst.
+	- wifimenu.sh - Connect to wifi, shows all available connections using nmcli, rofi and dunst.
 
 # Screenshots
 

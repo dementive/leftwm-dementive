@@ -70,6 +70,14 @@ rectangle_screenshot() { \
 	scrot --select -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'
 }
 
+wayland_full_screenshot() { \
+	grimblast save
+}
+
+wayland_rectangle_screenshot() { \
+	grimblast save area
+}
+
 option1="Screencast"
 option2="Video"
 option3="Audio"
@@ -78,21 +86,31 @@ option5="Screenshot full"
 option6="Screenshot select"
 option7="Exit"
 
-if [ ! -f /tmp/recordingpid ] ; then
+if [ "$1" = "wayland" ]; then
+	options="$option5\n$option6"
+	choice=$(printf "$options" | wofi -i -d -no-sidebar-mode -L 3 -p " ") 
+elif [ ! -f /tmp/recordingpid ] ; then
 	options="$option1\n$option2\n$option3\n$option5\n$option6\n$option7"
-	choice=$(echo "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(printf "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 else
 	options="$option4\n$option7"
-	choice=$(echo "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(printf "$options" | rofi -i -theme-str '@import "~/.config/leftwm/themes/current/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 fi
 
-
-case $choice in
-	$option1) screencast ;;
-	$option2) video ;;
-	$option3) audio ;;
-	$option4) killrecording ;;
-	$option5) full_screenshot ;;
-	$option6) rectangle_screenshot ;;	
-	*) exit ;;
-esac
+if [ "$1" = "wayland" ]; then
+    case $choice in
+        $option5) wayland_full_screenshot ;;
+        $option6) wayland_rectangle_screenshot ;;
+        *) exit ;;
+    esac
+else
+    case $choice in
+        $option1) screencast ;;
+        $option2) video ;;
+        $option3) audio ;;
+        $option4) killrecording ;;
+        $option5) full_screenshot ;;
+        $option6) rectangle_screenshot ;;
+        *) exit ;;
+    esac
+fi
