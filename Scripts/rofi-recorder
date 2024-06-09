@@ -63,6 +63,7 @@ audio() { \
 }
 
 full_screenshot() { \
+	sleep 1 # wait for rofi to close
 	scrot -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'
 }
 
@@ -71,6 +72,7 @@ rectangle_screenshot() { \
 }
 
 wayland_full_screenshot() { \
+	sleep 1 # wait for wofi to close
 	grimblast save
 }
 
